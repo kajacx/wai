@@ -19,6 +19,7 @@ wai-bindgen-gen-core = { path = "../gen-core", version = "0.2.3" }
 wai-bindgen-gen-rust = { path = "../gen-rust", version = "0.2.3" }
 heck = "0.3"
 structopt = { version = "0.3", default-features = false, optional = true }
+wasm-bindgen-test = { version = "0.3", optional = true } # TODO: dev dependencies cannot be optional
 
 [dev-dependencies]
 anyhow = "1.0"
@@ -32,4 +33,4 @@ wasmer-wasi = { version = "3.0", default-features = false }
 
 [features]
 sys = ["wai-bindgen-wasmer/sys", "wasmer/sys-default", "wasmer-wasi/sys-default"]
-js = ["wai-bindgen-wasmer/js", "wasmer/js-default", "wasmer-wasi/js-default"]
+js = ["wai-bindgen-wasmer/js", "wasmer/js-default", "wasmer-wasi/js-default", "wasm-bindgen-test"]

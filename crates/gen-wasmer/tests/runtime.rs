@@ -32,7 +32,8 @@ where
     Ok(exports)
 }
 
-// #[test]
-// fn should_fail() {
-//     panic!()
-// }
+// crates/gen-wasmer$ wasm-pack test --node --features js
+#[wasm_bindgen_test::wasm_bindgen_test]
+fn should_fail() {
+    panic!()
+}
