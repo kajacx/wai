@@ -31,3 +31,8 @@ where
 
     Ok(exports)
 }
+
+// #[test]
+// fn should_fail() {
+//     panic!()
+// }

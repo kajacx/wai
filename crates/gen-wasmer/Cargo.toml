@@ -25,6 +25,11 @@ anyhow = "1.0"
 test-helpers = { path = "../test-helpers", features = [
     "wai-bindgen-gen-wasmer",
 ] }
-wai-bindgen-wasmer = { path = "../wasmer", features = ["tracing"] }
-wasmer = "3.0"
-wasmer-wasi = "3.0"
+
+wai-bindgen-wasmer = { path = "../wasmer", default-features = false, features = ["tracing"] }
+wasmer = { version = "3.0", default-features = false }
+wasmer-wasi = { version = "3.0", default-features = false }
+
+[features]
+sys = ["wai-bindgen-wasmer/sys", "wasmer/sys-default", "wasmer-wasi/sys-default"]
+js = ["wai-bindgen-wasmer/js", "wasmer/js-default", "wasmer-wasi/js-default"]
