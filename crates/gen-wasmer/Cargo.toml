@@ -28,12 +28,13 @@ test-helpers = { path = "../test-helpers", features = [
 
 # Use current version of wai-bidgen-wasmer ⚠️ REVERT BEFORE MAKING A PULL REQUEST ⚠️
 wai-bindgen-wasmer = { path = "../../../wasmer/lib/wai-bindgen-wasmer", default-features = false, features = ["tracing"] }
-wasmer = { version = "3.0", default-features = false }
-wasmer-wasi = { version = "3.0", default-features = false }
+wasmer = { path = "../../../wasmer/lib/api", default-features = false }
+# wasmer-wasi = { version = "3.0", default-features = false }
 
 wasm-bindgen-test = { version = "0.3" } # TODO: dev dependencies cannot be optional
 
 [features]
-sys = ["wai-bindgen-wasmer/sys", "wasmer/sys-default", "wasmer-wasi/sys-default"]
-js = ["wai-bindgen-wasmer/js", "wasmer/js-default", "wasmer-wasi/js-default"]
-# js-test = ["js", "wasm-bindgen-test"]
+# sys = ["wai-bindgen-wasmer/sys", "wasmer/sys-default", "wasmer-wasi/sys-default"]
+# js = ["wai-bindgen-wasmer/js", "wasmer/js-default", "wasmer-wasi/js-default"]
+sys = ["wai-bindgen-wasmer/sys", "wasmer/sys-default"]
+js = ["wai-bindgen-wasmer/js", "wasmer/js-default"]
