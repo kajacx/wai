@@ -26,7 +26,8 @@ test-helpers = { path = "../test-helpers", features = [
     "wai-bindgen-gen-wasmer",
 ] }
 
-wai-bindgen-wasmer = { path = "../wasmer", default-features = false, features = ["tracing"] }
+# Use current version of wai-bidgen-wasmer ⚠️ REVERT BEFORE MAKING A PULL REQUEST ⚠️
+wai-bindgen-wasmer = { path = "../../../wasmer/lib/wai-bindgen-wasmer", default-features = false, features = ["tracing"] }
 wasmer = { version = "3.0", default-features = false }
 wasmer-wasi = { version = "3.0", default-features = false }
 
